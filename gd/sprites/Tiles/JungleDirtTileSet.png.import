@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/JungleDirtTileSet.png-7d6446108d0ac6ad0b5e7f4efdca4ce5.stex"
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
+source_file="res://sprites/Tiles/JungleDirtTileSet.png"
+dest_files=[ "res://.import/JungleDirtTileSet.png-7d6446108d0ac6ad0b5e7f4efdca4ce5.stex" ]
 
 [params]
 

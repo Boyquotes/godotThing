@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DirtAutoTile.png-d3a307615e70ed525e50d7acbd7747f9.stex"
+path="res://.import/Sky.png-85060acb896288b8484c5d6da11da3e4.stex"
 
 [deps]
 
-source_file="res://sprites/Tiles/DirtAutoTile.png"
-dest_files=[ "res://.import/DirtAutoTile.png-d3a307615e70ed525e50d7acbd7747f9.stex" ]
+source_file="res://sprites/Sky.png"
+dest_files=[ "res://.import/Sky.png-85060acb896288b8484c5d6da11da3e4.stex" ]
 
 [params]
 

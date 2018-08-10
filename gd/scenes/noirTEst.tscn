@@ -1,0 +1,170 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/player.gd" type="Script" id=1]
+[ext_resource path="res://ref/charRef_1.png" type="Texture" id=2]
+
+[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
+
+scale = Vector2( 0.36, 0.36 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Pickable", "Transform" ]
+
+[node name="Sprite2" type="Sprite" parent="." index="0"]
+
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+
+scale = Vector2( 1, 0.998392 )
+build_mode = 0
+polygon = PoolVector2Array( -39.0439, -111.219, -17.151, -124.487, -22.4583, -158.321, 6.06873, -164.292, 13.3663, -123.824, 35.9227, -113.209, 5.40533, 159.457, -16.4875, 159.457 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="face" type="Polygon2D" parent="." index="2"]
+
+position = Vector2( -15.5116, -142.388 )
+polygon = PoolVector2Array( -11.1942, -135.024, -16.035, -134.957, -18.7565, -136.841, -20.536, -141.551, -17.6051, -142.179, -14.4649, -142.284, -10.0344, -146.739, -11.4262, -151.726, -9.10655, -155.669, 7.24695, -160.077, 10.1465, -153.118, 10.7264, -147.087, 11.8862, -139.78, 11.1903, -136.648, -0.523865, -134.329 )
+uv = PoolVector2Array(  )
+color = Color( 0.835938, 0.702057, 0.702057, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 15.5116, 142.388 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+
+[node name="Polygon2D2" type="Polygon2D" parent="face" index="0"]
+
+position = Vector2( 15.5116, 142.388 )
+polygon = PoolVector2Array( 5.69476, -146.166, 8.94963, -148.014, 9.58406, -147.932, 10.5495, -147.187, 9.11514, -147.187, 5.80509, -145.642 )
+uv = PoolVector2Array(  )
+color = Color( 0, 0, 0, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+
+[node name="Polygon2D3" type="Polygon2D" parent="face" index="1"]
+
+position = Vector2( 15.5116, 142.388 )
+polygon = PoolVector2Array( -0.849564, -142.918, -1.56674, -142.946, -2.58734, -142.449, -4.21478, -141.512, -3.93894, -141.263, -3.19418, -140.987, -1.56674, -140.85, -0.0772209, -141.374, 0.860625, -141.925, 0.391703, -142.091, 0.0882816, -142.449 )
+uv = PoolVector2Array(  )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+
+[node name="Polygon2D" type="Polygon2D" parent="face" index="2"]
+
+position = Vector2( 21.3167, -3.91568 )
+polygon = PoolVector2Array( -5.85905, -142.447, -1.33574, -145.347, 1.67979, -145.231, 2.9556, -144.999, 0.519974, -144.303, -1.79967, -144.071 )
+uv = PoolVector2Array(  )
+color = Color( 0, 0, 0, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( -5.80509, 146.304 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+
+[node name="Hair" type="Polygon2D" parent="face" index="3"]
+
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 12.1547, 5.77289 )
+scale = Vector2( 0.664896, 1.00578 )
+polygon = PoolVector2Array( 8.16914, -23.8486, 10.2567, -9.45976, 14.2007, -8.0692, 18.1448, -7.72157, 23.9293, -1.46407, 22.8776, -8.41684, 26.5587, -12.7623, 25.328, -16.3003, 27.4696, -20.1229, 32.6095, -21.9634, 44.1743, -22.9545, 52.3263, -25.1035, 58.3739, -17.1078, 52.0634, -29.6229, 36.2873, -32.0564, 18.6706, -30.1443 )
+uv = PoolVector2Array(  )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( -36.0243, 3.02844 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+_sections_unfolded = [ "Material", "Visibility" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="lapells" type="Polygon2D" parent="face" index="4"]
+
+position = Vector2( -15.9172, -4.73435 )
+scale = Vector2( 1.24528, 1.34737 )
+polygon = PoolVector2Array( 11.2971, 16.2062, 24.6187, 17.2083, 36.7011, 16.3493, 37.9403, 8.33205, 37.8486, 3.64959, 36.6796, 1.82983, 33.8492, 0.806206, 34.8337, 5.41248, 34.2226, 7.75939, 24.4638, 9.62054, 15.6344, 9.19105, 9.43826, 7.47306 )
+uv = PoolVector2Array(  )
+color = Color( 0, 0, 0, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+
+[node name="Chest1" type="Polygon2D" parent="." index="3"]
+
+polygon = PoolVector2Array( -17.3607, -125.48, -32.4067, -118.342, -19.0968, -43.3054, -0.192886, -42.148, 1.05964e-005, -124.322 )
+uv = PoolVector2Array(  )
+color = Color( 0.128906, 0.111282, 0.111282, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+
+[node name="Chest2" type="Polygon2D" parent="." index="4"]
+
+position = Vector2( 2.09808e-005, 0 )
+scale = Vector2( -0.745562, 1 )
+polygon = PoolVector2Array( -17.3607, -125.48, -34.9281, -119.693, -19.0968, -43.3054, -0.192886, -42.148, 1.05964e-005, -124.322 )
+uv = PoolVector2Array(  )
+color = Color( 0, 0, 0, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+
+

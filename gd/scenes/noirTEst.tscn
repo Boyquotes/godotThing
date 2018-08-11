@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://ref/charRef_1.png" type="Texture" id=2]
 
-[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
+[node name="PlayerBody" type="KinematicBody2D" index="0"]
 
 scale = Vector2( 0.36, 0.36 )
 input_pickable = false
@@ -13,40 +13,61 @@ collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pickable", "Transform" ]
 __meta__ = {
-"_edit_lock_": true
+"_edit_ik_": true
 }
 
-[node name="Sprite2" type="Sprite" parent="." index="0"]
-
-visible = false
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+[node name="PlayerCollisionShape" type="CollisionPolygon2D" parent="." index="0"]
 
 visible = false
 scale = Vector2( 1, 0.998392 )
 build_mode = 0
 polygon = PoolVector2Array( -39.0439, -111.219, -17.151, -124.487, -22.4583, -158.321, 6.06873, -164.292, 13.3663, -123.824, 35.9227, -113.209, 5.40533, 159.457, -16.4875, 159.457 )
 _sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_lock_": true
-}
 
-[node name="UpperArmRight" type="Polygon2D" parent="." index="2"]
+[node name="ReferenceSprite" type="Sprite" parent="." index="1"]
+
+visible = false
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Camera2D" type="Camera2D" parent="." index="2"]
+
+visible = false
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+smoothing_speed = 10.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+_sections_unfolded = [ "Smoothing" ]
+
+[node name="Waist" type="Polygon2D" parent="." index="3"]
 
 editor/display_folded = true
-position = Vector2( 22.6383, -112.092 )
-rotation = -0.270771
-polygon = PoolVector2Array( -32.2291, -117.569, -40.1333, -112.571, -46.1778, -104.085, -47.2239, -93.3915, -50.8273, -80.6051, -50.7111, -77.118, -55.8256, -61.5419, -56.5231, -59.3333, -56.0581, -55.265, -51.641, -54.5675, -41.6444, -54.8, -39.2034, -56.0786, -38.2735, -59.7983, -38.2735, -62.3556, -34.0889, -75.4906, -28.1607, -92.2291, -24.6735, -100.831, -22.3487, -114.198, -26.6496, -118.499 )
+position = Vector2( -8.08237, -22.7571 )
+scale = Vector2( 1, 1 )
+polygon = PoolVector2Array( 12.9458, 74.7478, -2.77385, 174.926, 11.7323, 181.109, 28.6165, 181.585, 33.1348, 178.969, 34.7995, 145.201, 37.6531, 180.396, 65.0008, 175.64, 69.7569, 172.548, 49.3056, 85.9869, 45.9763, 77.1881, 45.9729, 73.8641, 31.1715, 73.9746 )
 uv = PoolVector2Array(  )
 color = Color( 0, 0, 0, 1 )
 vertex_colors = PoolColorArray(  )
-offset = Vector2( 31.0708, 110.633 )
+offset = Vector2( -33.1397, -106.643 )
 antialiased = false
 texture = null
 texture_offset = Vector2( 0, 0 )
@@ -55,49 +76,20 @@ texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_ik_": true
+}
 
-[node name="ForeArmLeft" type="Polygon2D" parent="UpperArmRight" index="0"]
+[node name="Chest1" type="Polygon2D" parent="Waist" index="0"]
 
-position = Vector2( -17.2106, 51.8645 )
+position = Vector2( -1.57721, -27.3177 )
+rotation = -3.40036e-006
 scale = Vector2( 1, 1 )
-polygon = PoolVector2Array( -53.7333, -62.0068, -55.9419, -57.9385, -57.1043, -54.9162, -57.1043, -50.6154, -48.3863, -34.1094, -40.0171, -21.2068, -35.8325, -18.4171, -34.3214, -19.812, -32.694, -25.7402, -27.5795, -29.5761, -25.8359, -29.6923, -24.7897, -30.8547, -26.5333, -33.7607, -28.8581, -34.4581, -34.9026, -46.1983, -37.2273, -54.8, -39.4359, -57.9385, -38.7385, -60.612, -42.4581, -64.3316, -48.8513, -65.0291 )
+polygon = PoolVector2Array( -17.3607, -125.48, -32.4067, -118.342, -18.4779, -35.4218, 0.0231018, -34.7192, 1.05964e-005, -124.322 )
 uv = PoolVector2Array(  )
-color = Color( 0, 0, 0, 1 )
+color = Color( 0.128906, 0.111282, 0.111282, 1 )
 vertex_colors = PoolColorArray(  )
-offset = Vector2( 48.2814, 58.7683 )
-antialiased = false
-texture = null
-texture_offset = Vector2( 0, 0 )
-texture_scale = Vector2( 1, 1 )
-texture_rotation_degrees = 0.0
-invert_enable = false
-invert_border = 100.0
-
-[node name="RightHand" type="Polygon2D" parent="UpperArmRight/ForeArmLeft" index="0"]
-
-position = Vector2( 15.8152, 32.7933 )
-polygon = PoolVector2Array( -35.8949, -22.0781, -32.9953, -16.2787, -30.3477, -13.0008, -25.9351, -11.8661, -21.0183, -14.5137, -19.2532, -18.6741, -14.9667, -18.1698, -12.4452, -20.0609, -13.5799, -22.5824, -20.0097, -28.1297, -28.3305, -30.1468, -33.1213, -29.0122, -35.8949, -25.8603 )
-uv = PoolVector2Array(  )
-color = Color( 0.125, 0.125, 0.125, 1 )
-vertex_colors = PoolColorArray(  )
-offset = Vector2( 32.4662, 25.975 )
-antialiased = false
-texture = null
-texture_offset = Vector2( 0, 0 )
-texture_scale = Vector2( 1, 1 )
-texture_rotation_degrees = 0.0
-invert_enable = false
-invert_border = 100.0
-
-[node name="Waist" type="Polygon2D" parent="." index="3"]
-
-position = Vector2( -31.0708, -110.633 )
-scale = Vector2( 1, 1 )
-polygon = PoolVector2Array( 12.9458, 74.7478, -2.77385, 174.926, 11.7323, 181.109, 28.6165, 181.585, 33.1348, 178.969, 34.7995, 145.201, 37.6531, 180.396, 65.0008, 175.64, 69.7569, 172.548, 49.3056, 85.9869, 45.9763, 77.1881, 45.9729, 73.8641, 31.1715, 73.9746 )
-uv = PoolVector2Array(  )
-color = Color( 0, 0, 0, 1 )
-vertex_colors = PoolColorArray(  )
-offset = Vector2( 0, 0 )
+offset = Vector2( -0.491731, 31.3077 )
 antialiased = false
 texture = null
 texture_offset = Vector2( 0, 0 )
@@ -106,12 +98,36 @@ texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
 __meta__ = {
-"_edit_lock_": true
+"_edit_bone_": true,
+"_edit_ik_": true
 }
 
-[node name="face" type="Polygon2D" parent="." index="4"]
+[node name="ChestRight" type="Polygon2D" parent="Waist/Chest1" index="0"]
 
-position = Vector2( -8.33929, -127.171 )
+position = Vector2( -0.461969, -0.206671 )
+polygon = PoolVector2Array( 26.4654, -117.053, 21.643, -121.683, 11.9982, -125.541, -0.154225, -126.119, -0.154398, -34.6865, 15.0844, -36.2296, 17.2063, -58.4127, 19.9069, -68.6362, 23.379, -90.6263 )
+uv = PoolVector2Array(  )
+color = Color( 0, 0, 0, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( -0.0298077, 31.1922 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+__meta__ = {
+"_edit_bone_": true,
+"_edit_ik_": true
+}
+
+[node name="face" type="Polygon2D" parent="Waist/Chest1" index="1"]
+
+editor/display_folded = true
+position = Vector2( -8.83064, -95.8633 )
+rotation = 3.51762e-006
+scale = Vector2( 1, 1 )
 polygon = PoolVector2Array( -11.1942, -135.024, -16.035, -134.957, -18.7565, -136.841, -20.536, -141.551, -17.6051, -142.179, -14.4649, -142.284, -10.0344, -146.739, -11.4262, -151.726, -9.10655, -155.669, 7.24695, -160.077, 10.1465, -153.118, 10.7264, -147.087, 11.8862, -139.78, 11.1903, -136.648, -0.523865, -134.329 )
 uv = PoolVector2Array(  )
 color = Color( 0.835938, 0.702057, 0.702057, 1 )
@@ -125,7 +141,7 @@ texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
 
-[node name="Polygon2D2" type="Polygon2D" parent="face" index="0"]
+[node name="Polygon2D2" type="Polygon2D" parent="Waist/Chest1/face" index="0"]
 
 position = Vector2( 8.33929, 127.171 )
 polygon = PoolVector2Array( 5.69476, -146.166, 8.94963, -148.014, 9.58406, -147.932, 10.5495, -147.187, 9.11514, -147.187, 5.80509, -145.642 )
@@ -141,7 +157,7 @@ texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
 
-[node name="Polygon2D3" type="Polygon2D" parent="face" index="1"]
+[node name="Polygon2D3" type="Polygon2D" parent="Waist/Chest1/face" index="1"]
 
 position = Vector2( 8.33929, 127.171 )
 polygon = PoolVector2Array( -0.849564, -142.918, -1.56674, -142.946, -2.58734, -142.449, -4.21478, -141.512, -3.93894, -141.263, -3.19418, -140.987, -1.56674, -140.85, -0.0772209, -141.374, 0.860625, -141.925, 0.391703, -142.091, 0.0882816, -142.449 )
@@ -157,7 +173,7 @@ texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
 
-[node name="Polygon2D" type="Polygon2D" parent="face" index="2"]
+[node name="Polygon2D" type="Polygon2D" parent="Waist/Chest1/face" index="2"]
 
 position = Vector2( 14.1444, -19.1329 )
 polygon = PoolVector2Array( -5.85905, -142.447, -1.33574, -145.347, 1.67979, -145.231, 2.9556, -144.999, 0.519974, -144.303, -1.79967, -144.071 )
@@ -173,7 +189,7 @@ texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
 
-[node name="Hair" type="Polygon2D" parent="face" index="3"]
+[node name="Hair" type="Polygon2D" parent="Waist/Chest1/face" index="3"]
 
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 4.9824, -9.44434 )
@@ -195,7 +211,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="lapells" type="Polygon2D" parent="face" index="4"]
+[node name="lapells" type="Polygon2D" parent="Waist/Chest1/face" index="4"]
 
 position = Vector2( -23.0895, -19.9516 )
 scale = Vector2( 1.24528, 1.34737 )
@@ -212,16 +228,40 @@ texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
 
-[node name="Chest2" type="Polygon2D" parent="." index="5"]
+[node name="UpperArmRight" type="Polygon2D" parent="Waist/Chest1" index="2"]
 
 editor/display_folded = true
-position = Vector2( 2.09808e-05, 0 )
-scale = Vector2( -0.745562, 1 )
-polygon = PoolVector2Array( -17.3607, -125.48, -34.9281, -119.693, -20.3855, -36.4991, 0.0318289, -36.1712, 1.05964e-05, -124.322 )
+position = Vector2( 23.9302, -77.0729 )
+rotation = -0.688963
+scale = Vector2( 1.15479, 0.914027 )
+polygon = PoolVector2Array( -32.2291, -117.569, -40.1333, -112.571, -46.1778, -104.085, -47.2239, -93.3915, -50.8273, -80.6051, -50.7111, -77.118, -55.8256, -61.5419, -56.5231, -59.3333, -56.0581, -55.265, -51.641, -54.5675, -41.6444, -54.8, -39.2034, -56.0786, -38.2735, -59.7983, -38.2735, -62.3556, -34.0889, -75.4906, -28.1607, -92.2291, -24.6735, -100.831, -22.3487, -114.198, -26.6496, -118.499 )
 uv = PoolVector2Array(  )
 color = Color( 0, 0, 0, 1 )
 vertex_colors = PoolColorArray(  )
-offset = Vector2( 0, 0 )
+offset = Vector2( 28.9706, 107.735 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_bone_": true,
+"_edit_group_": true,
+"_edit_ik_": true,
+"_edit_lock_": true
+}
+
+[node name="ForeArmLeft" type="Polygon2D" parent="Waist/Chest1/UpperArmRight" index="0"]
+
+position = Vector2( -19.3109, 48.9666 )
+polygon = PoolVector2Array( -53.7333, -62.0068, -55.9419, -57.9385, -57.1043, -54.9162, -57.1043, -50.6154, -48.3863, -34.1094, -40.0171, -21.2068, -35.8325, -18.4171, -34.3214, -19.812, -32.694, -25.7402, -27.5795, -29.5761, -25.8359, -29.6923, -24.7897, -30.8547, -26.5333, -33.7607, -28.8581, -34.4581, -34.9026, -46.1983, -37.2273, -54.8, -39.4359, -57.9385, -38.7385, -60.612, -42.4581, -64.3316, -48.8513, -65.0291 )
+uv = PoolVector2Array(  )
+color = Color( 0, 0, 0, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 48.2814, 58.7683 )
 antialiased = false
 texture = null
 texture_offset = Vector2( 0, 0 )
@@ -230,19 +270,17 @@ texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
 __meta__ = {
-"_edit_lock_": true
+"_edit_bone_": true
 }
 
-[node name="Chest1" type="Polygon2D" parent="Chest2" index="0"]
+[node name="RightHand" type="Polygon2D" parent="Waist/Chest1/UpperArmRight/ForeArmLeft" index="0"]
 
-position = Vector2( 2.81409e-05, 0 )
-rotation = -3.14159
-scale = Vector2( 1.34127, -1 )
-polygon = PoolVector2Array( -17.3607, -125.48, -32.4067, -118.342, -18.4779, -35.4218, 0.0231319, -34.7192, 1.05964e-05, -124.322 )
+position = Vector2( 15.8152, 32.7933 )
+polygon = PoolVector2Array( -35.8949, -22.0781, -32.9953, -16.2787, -30.3477, -13.0008, -25.9351, -11.8661, -21.0183, -14.5137, -19.2532, -18.6741, -14.9667, -18.1698, -12.4452, -20.0609, -13.5799, -22.5824, -20.0097, -28.1297, -28.3305, -30.1468, -33.1213, -29.0122, -35.8949, -25.8603 )
 uv = PoolVector2Array(  )
-color = Color( 0.128906, 0.111282, 0.111282, 1 )
+color = Color( 0.125, 0.125, 0.125, 1 )
 vertex_colors = PoolColorArray(  )
-offset = Vector2( 0, 0 )
+offset = Vector2( 32.4662, 25.975 )
 antialiased = false
 texture = null
 texture_offset = Vector2( 0, 0 )
@@ -250,12 +288,111 @@ texture_scale = Vector2( 1, 1 )
 texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
+__meta__ = {
+"_edit_bone_": true
+}
 
-[node name="LeftThigh" type="Polygon2D" parent="." index="6"]
+[node name="Position2D" type="Position2D" parent="Waist/Chest1/UpperArmRight/ForeArmLeft/RightHand" index="0"]
+
+position = Vector2( 16.5645, 10.4486 )
+scale = Vector2( 1.45944, 1.12901 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Position2D" type="Position2D" parent="Waist/Chest1/UpperArmRight/ForeArmLeft/RightHand/Position2D" index="0"]
+
+position = Vector2( 12.3384, 11.0121 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="UpperArmLeft" type="Polygon2D" parent="Waist/Chest1" index="3"]
 
 editor/display_folded = true
-position = Vector2( 11.9297, -14.9873 )
+position = Vector2( -31.5622, -79.3254 )
+rotation = 0.112638
+scale = Vector2( 1, 1 )
+polygon = PoolVector2Array( -32.2291, -117.569, -40.1333, -112.571, -46.1778, -104.085, -47.2239, -93.3915, -50.8273, -80.6051, -50.7111, -77.118, -55.8256, -61.5419, -56.5231, -59.3333, -56.0581, -55.265, -51.641, -54.5675, -41.6444, -54.8, -39.2034, -56.0786, -38.2735, -59.7983, -38.2735, -62.3556, -34.0889, -75.4906, -28.1607, -92.2291, -24.6735, -100.831, -22.3487, -114.198, -26.6496, -118.499 )
+uv = PoolVector2Array(  )
+color = Color( 0.125, 0.104492, 0.104492, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 31.0708, 110.633 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+_sections_unfolded = [ "Invert", "Texture", "Transform" ]
+__meta__ = {
+"_edit_bone_": true,
+"_edit_ik_": true
+}
+
+[node name="ForeArmLeft" type="Polygon2D" parent="Waist/Chest1/UpperArmLeft" index="0"]
+
+position = Vector2( -17.2106, 51.8645 )
+rotation = -0.00317536
+polygon = PoolVector2Array( -53.7333, -62.0068, -55.9419, -57.9385, -57.1043, -54.9162, -57.1043, -50.6154, -48.3863, -34.1094, -40.0171, -21.2068, -35.8325, -18.4171, -34.3214, -19.812, -32.694, -25.7402, -27.5795, -29.5761, -25.8359, -29.6923, -24.7897, -30.8547, -26.5333, -33.7607, -28.8581, -34.4581, -34.9026, -46.1983, -37.2273, -54.8, -39.4359, -57.9385, -38.7385, -60.612, -42.4581, -64.3316, -48.8513, -65.0291 )
+uv = PoolVector2Array(  )
+color = Color( 0.128906, 0.119339, 0.119339, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 48.2814, 58.7683 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="RightHand" type="Polygon2D" parent="Waist/Chest1/UpperArmLeft/ForeArmLeft" index="0"]
+
+position = Vector2( 15.8152, 32.7933 )
+rotation = -0.372342
+polygon = PoolVector2Array( -35.8949, -22.0781, -32.9953, -16.2787, -30.3477, -13.0008, -25.9351, -11.8661, -21.0183, -14.5137, -19.2532, -18.6741, -14.9667, -18.1698, -12.4452, -20.0609, -13.5799, -22.5824, -20.0097, -28.1297, -28.3305, -30.1468, -33.1213, -29.0122, -35.8949, -25.8603 )
+uv = PoolVector2Array(  )
+color = Color( 0.121094, 0.119202, 0.119202, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 32.4662, 25.975 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="hand" type="Position2D" parent="Waist/Chest1/UpperArmLeft/ForeArmLeft/RightHand" index="0"]
+
+position = Vector2( 14.0539, 7.81023 )
+rotation = 0.262883
+scale = Vector2( 1, 1 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="control" type="Position2D" parent="Waist/Chest1/UpperArmLeft/ForeArmLeft/RightHand/hand" index="0"]
+
+position = Vector2( 11.9212, 0.581514 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="LeftThigh" type="Polygon2D" parent="Waist" index="1"]
+
+editor/display_folded = true
+position = Vector2( 9.86082, -10.9973 )
 rotation = -0.0466623
+scale = Vector2( 1, 1 )
 polygon = PoolVector2Array( -20.5166, -13.2701, -32.9277, 64.4773, -18.5194, 70.1835, -2.82729, 70.6115, 1.16706, 67.4731, 2.49179, 51.4232, 3.45339, 26.2467, -0.544802, -4.85343, -8.67619, -14.982, -13.1002, -14.982, -17.6635, -14.982 )
 uv = PoolVector2Array(  )
 color = Color( 0, 0, 0, 1 )
@@ -268,8 +405,13 @@ texture_scale = Vector2( 1, 1 )
 texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
+__meta__ = {
+"_edit_bone_": true,
+"_edit_ik_": true,
+"_edit_lock_": true
+}
 
-[node name="LeftCalf" type="Polygon2D" parent="LeftThigh" index="0"]
+[node name="LeftCalf" type="Polygon2D" parent="Waist/LeftThigh" index="0"]
 
 position = Vector2( 4.76213, 76.9381 )
 rotation = 0.0550099
@@ -285,8 +427,11 @@ texture_scale = Vector2( 1, 1 )
 texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
+__meta__ = {
+"_edit_bone_": true
+}
 
-[node name="RightFoot" type="Polygon2D" parent="LeftThigh/LeftCalf" index="0"]
+[node name="LeftFoot" type="Polygon2D" parent="Waist/LeftThigh/LeftCalf" index="0"]
 
 position = Vector2( -5.80386, 84.2301 )
 polygon = PoolVector2Array( -20.5941, 150.263, -23.7601, 149.293, -26.28, 156.207, -25.3108, 162.345, -25.9569, 162.604, -26.0862, 163.831, 26.5583, 163.615, 26.3599, 163.02, 25.5667, 162.941, 25.765, 161.275, 24.1785, 160.521, 12.6227, 157.385, 2.00995, 155.448, 0.728236, 153.364, -1.92621, 152.022, -3.13905, 149.111, -12.8418, 144.26 )
@@ -301,11 +446,30 @@ texture_scale = Vector2( 1, 1 )
 texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
+__meta__ = {
+"_edit_bone_": true
+}
 
-[node name="RightThigh" type="Polygon2D" parent="." index="7"]
+[node name="LeftToe" type="Position2D" parent="Waist/LeftThigh/LeftCalf/LeftFoot" index="0"]
+
+position = Vector2( 38.1242, 12.0943 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="LeftFootControl" type="Position2D" parent="Waist/LeftThigh/LeftCalf/LeftFoot/LeftToe" index="0"]
+
+visible = false
+position = Vector2( 24.3559, 0.268051 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="RightThigh" type="Polygon2D" parent="Waist" index="2"]
 
 editor/display_folded = true
-position = Vector2( -12.3561, -9.83582 )
+position = Vector2( -14.425, -5.84578 )
+scale = Vector2( 1, 1 )
 polygon = PoolVector2Array( -20.5166, -13.2701, -32.9277, 64.4773, -18.5194, 70.1835, -2.82729, 70.6115, 1.16706, 67.4731, 2.49179, 51.4232, 3.45339, 26.2467, -0.544802, -4.85343, -8.67619, -14.982, -13.1002, -14.982, -17.6635, -14.982 )
 uv = PoolVector2Array(  )
 color = Color( 0.121094, 0.121094, 0.121094, 1 )
@@ -319,10 +483,11 @@ texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
 __meta__ = {
-"_edit_lock_": true
+"_edit_bone_": true,
+"_edit_ik_": true
 }
 
-[node name="RightCalf" type="Polygon2D" parent="RightThigh" index="0"]
+[node name="RightCalf" type="Polygon2D" parent="Waist/RightThigh" index="0"]
 
 position = Vector2( 4.76213, 76.9381 )
 polygon = PoolVector2Array( -20.8733, 68.0437, -22.0145, 65.4759, -16.5936, 61.4815, -5.60911, 57.0592, 1.38103, 65.4759, 2.09431, 76.7457, -1.61474, 98.2868, -5.32379, 126.247, -3.61193, 136.233, 1.38103, 138.658, -6.17973, 143.937, -3.32661, 146.504, -2.04271, 148.93, -1.18677, 150.784, -17.5922, 150.641, -22.8705, 150.927, -26.2942, 146.647, -22.5851, 145.506, -23.2984, 141.654, -25.153, 140.941, -23.1558, 140.085, -22.7278, 136.804, -23.5837, 131.24, -23.4411, 96.5749, -27.2928, 89.1568, -20.0173, 72.0381 )
@@ -337,33 +502,18 @@ texture_scale = Vector2( 1, 1 )
 texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
+__meta__ = {
+"_edit_bone_": true
+}
 
-[node name="RightFoot" type="Polygon2D" parent="RightThigh/RightCalf" index="0"]
+[node name="RightFoot" type="Polygon2D" parent="Waist/RightThigh/RightCalf" index="0"]
 
-position = Vector2( -5.80386, 84.2301 )
+position = Vector2( -9.99763, 91.016 )
 polygon = PoolVector2Array( -20.5941, 150.263, -23.7601, 149.293, -26.28, 156.207, -25.3108, 162.345, -25.9569, 162.604, -26.0862, 163.831, 26.5583, 163.615, 26.3599, 163.02, 25.5667, 162.941, 25.765, 161.275, 24.1785, 160.521, 12.6227, 157.385, 2.00995, 155.448, 0.728236, 153.364, -1.92621, 152.022, -3.13905, 149.111, -12.8418, 144.26 )
 uv = PoolVector2Array(  )
 color = Color( 0.0117188, 0.0106659, 0.0106659, 1 )
 vertex_colors = PoolColorArray(  )
-offset = Vector2( 14.2378, -150.04 )
-antialiased = false
-texture = null
-texture_offset = Vector2( 0, 0 )
-texture_scale = Vector2( 1, 1 )
-texture_rotation_degrees = 0.0
-invert_enable = false
-invert_border = 100.0
-
-[node name="UpperArmLeft" type="Polygon2D" parent="." index="8"]
-
-editor/display_folded = true
-position = Vector2( -31.0708, -110.633 )
-scale = Vector2( 1, 1 )
-polygon = PoolVector2Array( -32.2291, -117.569, -40.1333, -112.571, -46.1778, -104.085, -47.2239, -93.3915, -50.8273, -80.6051, -50.7111, -77.118, -55.8256, -61.5419, -56.5231, -59.3333, -56.0581, -55.265, -51.641, -54.5675, -41.6444, -54.8, -39.2034, -56.0786, -38.2735, -59.7983, -38.2735, -62.3556, -34.0889, -75.4906, -28.1607, -92.2291, -24.6735, -100.831, -22.3487, -114.198, -26.6496, -118.499 )
-uv = PoolVector2Array(  )
-color = Color( 0.125, 0.104492, 0.104492, 1 )
-vertex_colors = PoolColorArray(  )
-offset = Vector2( 31.0708, 110.633 )
+offset = Vector2( 18.4316, -156.826 )
 antialiased = false
 texture = null
 texture_offset = Vector2( 0, 0 )
@@ -372,39 +522,23 @@ texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
 __meta__ = {
-"_edit_lock_": true
+"_edit_bone_": true
 }
 
-[node name="ForeArmLeft" type="Polygon2D" parent="UpperArmLeft" index="0"]
+[node name="Position2D" type="Position2D" parent="Waist/RightThigh/RightCalf/RightFoot" index="0"]
 
-position = Vector2( -17.2106, 51.8645 )
-polygon = PoolVector2Array( -53.7333, -62.0068, -55.9419, -57.9385, -57.1043, -54.9162, -57.1043, -50.6154, -48.3863, -34.1094, -40.0171, -21.2068, -35.8325, -18.4171, -34.3214, -19.812, -32.694, -25.7402, -27.5795, -29.5761, -25.8359, -29.6923, -24.7897, -30.8547, -26.5333, -33.7607, -28.8581, -34.4581, -34.9026, -46.1983, -37.2273, -54.8, -39.4359, -57.9385, -38.7385, -60.612, -42.4581, -64.3316, -48.8513, -65.0291 )
-uv = PoolVector2Array(  )
-color = Color( 0.128906, 0.119339, 0.119339, 1 )
-vertex_colors = PoolColorArray(  )
-offset = Vector2( 48.2814, 58.7683 )
-antialiased = false
-texture = null
-texture_offset = Vector2( 0, 0 )
-texture_scale = Vector2( 1, 1 )
-texture_rotation_degrees = 0.0
-invert_enable = false
-invert_border = 100.0
+visible = false
+position = Vector2( 41.3748, 5.47597 )
+__meta__ = {
+"_edit_bone_": true
+}
 
-[node name="RightHand" type="Polygon2D" parent="UpperArmLeft/ForeArmLeft" index="0"]
+[node name="Position2D" type="Position2D" parent="Waist/RightThigh/RightCalf/RightFoot/Position2D" index="0"]
 
-position = Vector2( 15.8152, 32.7933 )
-polygon = PoolVector2Array( -35.8949, -22.0781, -32.9953, -16.2787, -30.3477, -13.0008, -25.9351, -11.8661, -21.0183, -14.5137, -19.2532, -18.6741, -14.9667, -18.1698, -12.4452, -20.0609, -13.5799, -22.5824, -20.0097, -28.1297, -28.3305, -30.1468, -33.1213, -29.0122, -35.8949, -25.8603 )
-uv = PoolVector2Array(  )
-color = Color( 0.121094, 0.119202, 0.119202, 1 )
-vertex_colors = PoolColorArray(  )
-offset = Vector2( 32.4662, 25.975 )
-antialiased = false
-texture = null
-texture_offset = Vector2( 0, 0 )
-texture_scale = Vector2( 1, 1 )
-texture_rotation_degrees = 0.0
-invert_enable = false
-invert_border = 100.0
+visible = false
+position = Vector2( 26.5014, 0.791092 )
+__meta__ = {
+"_edit_bone_": true
+}
 
 

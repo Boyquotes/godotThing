@@ -17,7 +17,7 @@ func _process(delta):
 		motion.x = min(motion.x + ACCELERATION, MAX_SPEED)
 		##$Sprite.flip_h = false
 		
-		#//$Sprite.play("Run")
+		#$AnimationPlayer.play("Run")
 	elif Input.is_action_pressed("ui_left"):
 		motion.x = max(motion.x - ACCELERATION, -MAX_SPEED)
 		#//$Sprite.flip_h = true
